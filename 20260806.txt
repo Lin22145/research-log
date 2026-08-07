@@ -1,0 +1,28 @@
+(1)
+  a.Vibe-trading的因子是一个比较完整的Alpha Zoo公式因子体系，每个因子对应一个独立.py文件，以量价背离因子为例，结构大致如下：
+  import pandas as pd
+
+  from src.factors.base import rank, delta, ts_corr, safe_div
+
+__  alpha_meta__ = {
+     "id": "my_alpha_001",
+     "nickname": "量价背离因子",
+     "theme": ["volume", "reversal"],
+     "formula_latex": "...",
+     "columns_required": ["open", "close", "volume"],
+     "extras_required": [],
+     "requires_sector": False,
+     "universe": ["equity_cn"],
+     "frequency": ["1d"],
+     "decay_horizon": 6,
+     "min_warmup_bars": 7,
+     "notes": "...",
+ }
+
+ def compute(panel: dict[str, pd.DataFrame]) -> pd.DataFrame:
+     ...
+     return factor
+    因此，因子是以元数据_alpha_meta_+计算函数compute(panel)的形式表达
+ b.但是还不知道怎么从口头策略映射到具体规范的因子的
+（2）回忆了一下Alpha agent的因子表达，和VIbe-trading的有所不同，感觉Alpha agent好像更高级一点
+  
