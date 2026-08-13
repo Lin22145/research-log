@@ -1,0 +1,25 @@
+《When Agents Trade: Live Multi-Market Trading Benchmark for LLM Agents》
+
+主要内容是对不同大模型agent的benchmark，主要发现是：
+1.智能体架构对交易结果的影响通常大于底层LLM的选择；
+2.没有任何一种智能体或LLM在所有资产上都最好， 最佳结果通常来自特定的“智能体—模型—资产”组合；3.DeepFundAgent整体最均衡， 它的记忆适应机制使其更偏保守，在多项资产上取得相对稳定的中等收益；
+4.InvestorAgent在TSLA上表现突出。 搭配GPT-4.1时累计收益率达到40.83%，夏普比率为6.47；
+5.TradeAgent和HedgeFundAgent风险更高， 它们可能取得很高收益，也可能遭受明显亏损。例如，HedgeFundAgent在ETH和BMRN上表现较好，但在TSLA和BTC上亏损；
+
+测试了四种不同的agent：
+InvestorAgent、TradeAgent、HedgeFundAgent、DeepFundAgent
+
+有点反常识，为什么TradeAgent 和HedgeFundAent的风险更高？
+
+论文的主要贡献
+1.提出了一个持续运行、实时更新、跨股票和加密货币市场的交易智能体基准。
+2.建立了经过汇总、去重和人工检查的统一市场信息环境。
+3.在统一交易协议下比较不同智能体架构和不同LLM。
+4.提供实时排行榜和可视化界面，使实验能够持续扩展和复现。
+5.实证指出：优化智能体如何组织信息、协同推理、利用记忆和控制风险，可能比单纯升级大模型更有效
+
+局限性
+1.实验只有约两个月，资产仅有四种。
+2.每日一次的BUY/SELL/HOLD决策也不能完整代表真实投资组合管理。
+3.此外，交易主要是模拟执行，尚未充分考虑滑点、流动性、复杂仓位配置等现实因素。
+4.因此，这项工作的价值更偏向于提供一个实时、统一的研究平台，而不是证明LLM智能体已经能够稳定战胜市场。
